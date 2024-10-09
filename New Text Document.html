@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare - Rumah Sakit Sehat Sentosa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://sticare.id/wp-content/uploads/2022/09/31.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    color: #2b7a78;
+}
+
+.doctors-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+.doctor-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: center;
+}
+
+.doctor-photo {
+    width: 25%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.doctor-name {
+    font-size: 1.5em;
+    margin-top: 1em;
+    color: #17252a;
+}
+
+.doctor-specialty {
+    font-size: 1.2em;
+    color: #3aafa9;
+}
+
+.doctor-bio {
+    margin-top: 0.5em;
+    font-size: 1em;
+    color: #5c5c5c;
+}
+
+.doctor-schedule ul {
+    list-style: none;
+    margin: 0.5em 0;
+}
+
+.appointment-button {
+    background-color: #2b7a78;
+    color: #fff;
+    border: none;
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-button:hover {
+    background-color: #3aafa9;
+}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        header {
+            background-color: #ffffff;
+            color: #333;
+            padding: 10px 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .contact-info {
+            display: flex;
+        }
+        .contact-info div {
+            margin-left: 20px;
+        }
+        nav {
+            background-color: #4CAF50;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .hero {
+            background-color: #008080;
+            color: white;
+            padding: 50px 0;
+            text-align: left;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .feature-box {
+            background-color: #fff;
+            padding: 20px;
+            width: 22%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .login-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .login-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        #dashboardContainer {
+            display: none;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-hapus {
+            color: red;
+            cursor: pointer;
+        }
+        .service-desc {
+            display: none;
+        }.hero {
+    background-image: url('https://img-cdn.medkomtek.com/1O6iv54gjAq51zhJzd2ISlDZHDU=/fit-in/0x0/smart/filters:quality(100):strip_icc():format(webp)/article/SBO5b1vleTzNoAPHAcvWv/original/004856800_1582792894-Anjuran-Cek-Kesehatan-Rutin-Berdasarkan-Usia-shutterstock_1067323655.jpg');
+    background-size: cover;
+    background-position: center;
+    color: green;
+    padding: 100px 0; /* Adjust the padding to center vertically */
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Adjust height according to the desired size */
+}
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">MEDICARE</div>
+            <div class="contact-info">
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <span>0812345678</span>
+                </div>
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bandar Lampung</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#" onclick="loadPage('home')">HOME</a>
+            <a href="#" onclick="loadPage('doctors')">DOCTORS</a>
+            <a href="#" onclick="loadPage('services')">SERVICES</a>
+
+            <a href="#" onclick="showLoginForm()" class="cta-button" id="loginButton">Login / Appointment</a>
+        </div>
+    </nav>
+
+    <div id="mainContent" class="container">
+        <!-- Content will be loaded here -->
+    </div>
+
+    <div id="loginContainer" class="login-container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <select id="role" required>
+                <option value="">Pilih Role</option>
+                <option value="petugas">Petugas</option>
+                <option value="dokter">Dokter</option>
+            </select>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" id="loginBtn">Login</button>
+            <button onclick="hideLoginForm()">Kembali ke Beranda</button>
+        </div>
+    </div>
+
+    <div id="dashboardContainer">
+        <nav id="dashboardNav">
+            <!-- Dashboard navigation will be generated here -->
+        </nav>
+        <div id="dashboardContent" class="container">
+            <!-- Dashboard content will be loaded here -->
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <footer>
+        &copy; 2024 Medicare - Rumah Sakit Sehat Sentosa. All Rights Reserved.
+    </footer>
+
+    <script>
+        let users = [
+            { username: "petugas1", password: "password1", role: "petugas" },
+            { username: "dokter1", password: "password2", role: "dokter" }
+        ];
+        let pasienTerdaftar = [];
+        let jadwalKonsultasi = [];
+        let hasilPemeriksaan = [];
+
+        function loadPage(page) {
+            const content = document.getElementById('mainContent');
+            switch(page) {
+                case 'home':
+                    content.innerHTML = `
+                        <div class="hero">
+                            <h1>Selamat Datang di Medicare</h1>
+                            <p>Medicare, Rumah Sakit Sehat Sentosa, pusat data pasien.</p>
+                            <a href="#" onclick="showLoginForm()" class="cta-button">Login</a>
+                        </div>
+                        <div class="features">
+                            <div class="feature-box">
+                                <h3>pendaftaran pasien</h3>
+                                <p>pusat pendaftran pasien.</p>
+                            </div>
+                            <div class="feature-box">
+                                <h3>rekap medis</h3>
+                                <p>hasil pemeriksaan pasien.</p>
+                            </div>
+                            <div class="feature-box">
+                                <h3>Layanan Darurat</h3>
+                                <p>Pelayanan 24/7 untuk kebutuhan medis mendesak Anda.</p>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'doctors':
+                    content.innerHTML = `
+                    <h1 class="section-title">Tim Dokter</h1>
+        <div class="doctors-grid">
+            <!-- Dokter 1 -->
+            <div class="doctor-card">
+                <img src="data:image/jpeg;base64,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" alt="Dr. Akram Yalrizon Golanda" class="doctor-photo">
+                <h2 class="doctor-name">Dr. Akram Yalrizon Golanda</h2>
+                <p class="doctor-specialty">Spesialis Bedah</p>
+                <p class="doctor-bio">
+                    Dr. Akram memiliki lebih dari 15 tahun pengalaman dalam bidang bedah umum dan bedah rekonstruksi. 
+                    Beliau ahli dalam operasi laparotomi dan bedah plastik rekonstruktif.
+                </p>
+                <div class="doctor-schedule">
+                    <p><strong>Jadwal Praktek:</strong></p>
+                    <ul>
+                        <li>Senin - Rabu: 09:00 - 13:00</li>
+                        <li>Kamis - Sabtu: 14:00 - 18:00</li>
+                    </ul>
+                </div>
+            <div class="doctor-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTqNeJgni_L5EjwixhLlNWQISXjipV1RW6Ag&s" alt="Dr. Zikra Maizi" class="doctor-photo">
+                <h2 class="doctor-name">Dr. Zikra Maizi</h2>
+                <p class="doctor-specialty">Spesialis Saraf</p>
+                <p class="doctor-bio">
+                    Dr. Zikra memiliki keahlian dalam menangani gangguan saraf perifer dan pusat. 
+                    Beliau telah membantu banyak pasien pulih dari cedera saraf dan stroke.
+                </p>
+                <div class="doctor-schedule">
+                    <p><strong>Jadwal Praktek:</strong></p>
+                    <ul>
+                        <li>Senin - Kamis: 10:00 - 14:00</li>
+                        <li>Jumat - Sabtu: 16:00 - 20:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Dokter 4 -->
+            <div class="doctor-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-QX8fsIF2NQrq56qCFDRSWlSfgrq8bxyD3A4EpCqsZIYAC6jReiRAs7YUdKnWbMYz0mU&usqp=CAU" alt="Dr. Safira Salsabila" class="doctor-photo">
+                <h2 class="doctor-name">Dr. Safira Salsabila</h2>
+                <p class="doctor-specialty">Spesialis Anak</p>
+                <p class="doctor-bio">
+                    Dr. Sinta adalah dokter anak berpengalaman yang fokus pada kesehatan dan kesejahteraan anak-anak. 
+                    Beliau mengkhususkan diri dalam imunisasi, gizi anak, dan tumbuh kembang anak
+                </p>
+                <div class="doctor-schedule">
+                    <p><strong>Jadwal Praktek:</strong></p>
+                    <ul>
+                        <li>Senin - Rabu: 08:00 - 12:00</li>
+                        <li>Jumat - Sabtu: 14:00 - 18:00</li>
+                    </ul>
+            </div>
+
+            <!-- Dokter 2 -->
+            <div class="doctor-card">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUQEBIWFhUXFRUYFRUVEhcWGhgXGBcWFhYWFxcYHiggGBomHRUVITEhJSkrLi4uFyA1ODMsNygtLisBCgoKDg0OGhAQGi8mICUrLS8tLTUtLS0tNS0tLSstLy0tLy02LS0tLS0tLS0tLS0uKy0tLS0tLS0tKy0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABgIDBAUHAQj/xABDEAABAwICBwUFBQcCBgMAAAABAAIDBBESIQUGMUFRYXEHEyKBkTJSobHBFEJisvAjM3KCkqLRJHN0s8LS4fE0NVP/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAjEQEBAQACAgIBBQEAAAAAAAAAAQIDESExE0ESBCJRYXEF/9oADAMBAAIRAxEAPwDtCIiAiIgIiICIiAiIgIioxXKmTsXGi6uCMLyNVOcACSbAZk8kDCF44KC6R07NUyiKFxYxzg1tiWk3NgXEZgcvmsXSEFTRubeWxcCRge4jLiHAA7eajt6uP+Xq9Z1qTV9RP3qy5y1ur+mftDDiAEjbBwGw32OHWxy5LPkK0z5edy8WuLdxr3FJmI3rz7ZbaFaeVjSFW/GMmziqmOyvY8Dkr6jUrl7T6VfHkfE3gfoVS5/hKSIrFJVskbiYeo3jkQr6oCIiAiIgIiICIiAiIgIiICIiAiIgKzCrxViJ2xXz6oyg5a7WQkUspG0tA8iQHfAlZ8YXtTE17HRu2OBB6EWVa04tTG86v1YieqjaQtjx4e/xG3tXuCcPLYFudO/Y8QFVhxYThvi2X/DzCh9VQT0cokw3DTdr8N2naM+Bz2FWamonrHg4MbgMPgbYAXJzOwbTmSqdvf3+knLy/NOT9vm99+v6n8Rm6kX75/Dujfribb6qXyFYGgdEinjIJBe6xeRsy2NHIXPqVmyLbE6jyf8Aoc+ebnus+vSxIVjSOV+RY0i0cLHlKwJisuYrCmVatFdBVOjeHN8xxHAqaA71BGbVPAFTRREXhcqIeOcjBvXjW8f0VWgIiICIiAiIgIiICIiAiIg8fsPQrHDg0YnEADbc2HVXal9mOdwa4+gJXGNPaemqXHE6zL+Fg2Ac+JU/nMxpx8d3fDpFdrxRxHCJDI7hG0u/uGQ9Vp6ntJaP3cDj/E8N+V1zjFuHmVfhp7rK8t+nVP0+J7TGXtKm+7CwfzuP0Cx3dpNTvhi/rd/hRVsOI5bPmrVRFZV+TS3xcf8ACWDtOlv4qVp6Sn6tWTS9pkb74qaUWNiQWEfMLnlYMIXmhC4NLxmC43B3gZfRWnLqK3gxXT2a/wBETZ73Rn8bHAf1Wt8VsYdMwS/u5mO6PBXKK2BpGJubT8DwKwmtB8J2jYf1vVpzX7Uv6efVdlkcsSUrltLpOoi/dzPA91xxD0ddbyl1xkaB9ojxNJtjj3Hbm0/S60nJKx1xXKb0ou5o/EPmpyVAdXq2OZ8bo3AjG3qMxtG0KfKdM6Lyy9RUQIiICIiAiIgpLlUiICIiAiIgIiIIz2haRMVIWtNnSuDP5bEv+At/MuO1E+Ya3a7LougdrlTZ0DNwbI71LR/0rmNA/E97zu8I6nM/T1WO/bu4J1if22kIAyWVLPlhG0/JaqWowi68oZ7jGd+zpuVW1b1rg0WWC6QOeBuGZ6BYVTW2G1Y4qLMLjtd8tyKrOl5nPcWsFzuWy0L4GCN4sbWN/eG1bDVTQpc7G4ZnPpwC2Gu2hzFhnYPC6zXcnj2T5jLy5qO09I6+XC8t+67I9dxWJNkVTUSYgrYkxC+/YVIu4s89+1Xoc2vjPAkdW5j5fFYb3ZA+X+P1yV6GSz2O45Hyy+RCvGWkw7NakGoja428WR6g2HS9l2ZfPeqU5jqG/hcP7Xf+F9CFaz05eSfuEREZiIiAiIgIiICIiAiKlzkHpcvVS1u9VICIiDj3bPV/6ljPdhHq5zz8gFBNFG0IPvFx+JH0Cm3bZSOFQyTc+EAdWOdcejm+qhbI8MbWjPIAcystTy7eO9Zn+MOulLiIwdq2D3YWgcAserEFPYvOKbfYk4bjZbdtCzNX446l+Evudwz+ufDO1lStM3z19tcCXuu72B8Tw6Lf6D0O+Z4e4Zbh9St7Qamvx3kAPAD2R04+am+jNEtjGQzVbpb019O6npWjvpWMy+84XPRu0+QWu0vrloySN8D5iWuFiRE/LgRcbQbHyW103ouhBNRUQsc7eXAm9hvbexsBtI2BROo7RqOLwRQssNzG29MLcPxVZ5R/qFTubc928PbfJwBFxuNjmOiswOzI45qbS6c0dXsLLtjksDewYcRys0kAydLbwojpTRklPIA8ZXsHDYQfkeRWkqO/taJycOV/TP5XXsbsmfxn6KlntZ78vXJXKelkwtkwksBOJw3bNvDZtV4ppn6AN5/5j819HL511Lix1MY4vaPVwX0UVpPTl5fYiIpZiIiAiIgIiICIiDxxVIbxVaICIiAiIgj+u+rYrqcxggSNOKJx2YrWLT+EjL0O5cHotGzQVghlY7F4miN5I8diWtHC+ViMti+mFz7tTofHTVQGbHEX5tIkYPhIqbnjtvw68zLmGreiad0cVXpHEYpKlzJcOK9msc63gzzfhvbO11qaquhZVufQMcyNspMF/awg5BwOZBFxY52Oe9da0lq8HxSxwt8EkgqYiMwyYgh7SBmGPBNiL2JN8rKP6G1Hxl4dTytkJGB77NjZtxud7+6wF/qs/knTo+Dz5vXTp+jiJI2SAZPY1w6OAI+avvYr1JTNjY2Nvssa1o6NAA+SOIOxc6Zry5n2qsc5kUZxCHHect2lgLQGg8yb9Whc713fo91QBo2IsiEbWuuCMTwTdwDiTswgneQTzPdtY9DNqYZISbFzbB3BwIc09LtF+V1yuPVMMnaaqmmc0O8bY2kh4Huvbsv1B6Lfj3JEb47u9xE9H6G7yOZwuHRsEjXXtsvcH4dFLtXu8nowZgd4a4kEuA3mwFs7jO5yvdbik1bOGYYDEyY2wk3cyEEkMvveQbE9NpWZXuZFHhaA1rG2AG4DIAKNal8NM8dzbXN6puF5bwdZS/Q5wBrRs3+eZ+a0EVL3slyMgbu6nOyktJGGAySHC1uZJWfJrvqR08GJM63plaj6IDdJlrR4GEyAcBhxAeRcAuwqA9l0XeGorCLY3BjOQFiR6CNT5defTx+W96vQiIrMxERAREQEREBERAREQEREBAV4QgCD1QLtaqf2MMIObnuf/QMI/P8ABT1cl7TqvFWFl8o42NtzPjP5h6Ku74a8M722+p2ku9pYnX8TW924fiZ4fiAD5qUQTrkejNLGka6UC7SRibe1+Y5qW6F1xpp8o5Bi3sd4XD+U7eoyXLc16V1mzq+0zqKpoFnusDvOQ9dyxaepjBwNeHE52BueuW7msIaRG9WxWsb7IA6AD5KvSs/GTptJZlraqrI2FYsukFr6mr4lOl+PUj2pqCd5Ub1jb4Mb5QyNubsrkncG8SrWmNbqaG4x94/3I7Oz5u2N9b8lAtIaYlqpMUhs0eywbG8+Z5/JXzi+0c3PL4bGn01K0nu7NZfwtLQbdTtJ4qmavlmcO8eXC+Q2AeQy81ixxq9SMsQei1kjnutXw+htRaMRUMI95uM/zG4+FlvgVqtVpg+jp3DZ3TR5tGE/EFbQBbOG+3qIiIEREBERAREQEREBERAREQEREBcU1+/+wnB95np3bLfBdT07p37MW4onOa7Y4EWv7p52z/8AS5zrV3VXP9oYXR3a0OBbiuW5Yrg8MI8lnu/To4PF7qFabqP2QbzuonCwuIABJLgAACSSTkABmSupV+haWSn7rFaXCbSFj/aO82BJbusrerOr8FJHM/vw+qcxzIJO6eGwhzbGQA548znwGW0q34yfcLyXd8S+Gq1X0FpF+OTv5I4I743d5ju4bY4wbgkHIkZA5ZkECYT00sT44pJgXyjwMOEOxbxszGwX4qS6EZGaCKCMjwdzEQAbD2QbXGd8yo9rDoptVptkLJHAsYx0jhbwFl5GtZw2x58XFTvjzZ4Rjm1mrVVo2o98jpl8lzrWPRFQ+ofE0vkOBr8DpCfaLhZoJt90ldq1/qHU9M90P717mRsdb2C91i4DZ4W4jnvA6KF1+rn2FsFaySR0xlYyUOcXhzHg4g4nO+W26nPFJPBvnu/bkM0LmOLHtLXNNi0ixB6K/o4+NdI7XNXwGMq2CxbZr7b2u9knoT/cVzGDbl5Kup0jN89pXLELBw81YGSyZDYAjgLrFmOV+Gflv/XJZOuuxdkele8gfTuOcbg5v8Lto8iP7lPlxnsblP2x4GzuXX/qZ9bLsy2npw8k60IiKVBERAREQEREBERAREQEREBERBYrqNkrHRSC7XD04EcCFzTSGr88b3NDHPAOTmtJBG48jyXUlHdY43MBkGbTmfE7wnmBuWXLL14dH6ezvrVc5lBaS1wsRtByI6qloVuaoL5C5XAs5302vXfhstCaRMMgJuWYml7eOE3BHMZrfai6JeysqaudzXGRt43A+0HuL32BzFsLBbgsTQFfEQIZY47jJpdGDi5E8fmtrWVAaMLQGgbA0Wt04KJy6zek3hzud/a7rLPjwsHs96GuPF2FxLRyFs+eW4q1WftWRxj70rQf4Rc+mQWXo6rBhbfcS30sR+ZVvqW8l6GdSztw3Nl6WNctECankiP3mOHQ2yPqvmyhiPeeIWLdo5jK3r8l9I1Nfla/le64LWQgVNSW7BPJboXvWXI04/bLe/LyWI5+R6H45BUzTWC6B2a6iipa2rqs4Q44Y/8A9HNNji4MBvlv5AZ4yN976jf9jWgXRxPrJBYygNjB24Abl3QkC38PNdIXjGgAAAAAWAAsABsAC9Wscmr3exEXhKIeOcjOK8aM/wBbVWgIiICIiAiIgIiICIiAiIgKiSIOBBzB2j4KtEED1g1Oc0OmhcHWzLMNiRvtbIkfFRRrV2dR+q0FA+QuMYtwb4RzNh5qLx/le2ueTqdVzoheyVUu5588/msntPpBT/ZxTExl7pMRBJuGhth4r+8tdqDTOqJ3xzyOcBEXD2RYh7BfIcHFV+Gr/NEhp9JsDGsa7PNzrgjM2FvQBHVt96y6vVoNzYT52WvkpHN2hbyXryyvVvhkVOja2SMOpI2vx3s90rW4Dci5adp/Wag+smpNVRuxyDvI3NGKVgJAcczi3ixvmdvwXX9TJrxOYfuuv5OH+Wn1UhVNTyTXT5Ykp9o6WO7l+ua6j2R60MY00M7sPiJiLshiOTmHhe1xzvyXRK3QFJL+9poXdYm39bXVEmrdE5zXGkgJbax7puVtm7dZV6Tdyzy2qIilmKnCqkQEREBERAREQUlyqREBERAREQEREBERAWM1X5DkehVljeKvgcv7Y5P21Iz8M5+MQWN2W/8AzH/8O/8APEqO2GW9bTt92Bx/qef+1e9lx/1p/wBiT80at9jp1Q0cFqquAcAtzMFraoHgrUizqw7DM5u5zT6gg/5UpUR0UbVDDzI9QR9VLllr2CIiqCIiAiIgIiICIiAiIgIiICIqXOQekr1UNbvKrQEREBERBRMcvRUBXJG3C1um9KNpYXVEwPdtw4izxHxODRllvcFfNnQ5D2qy30ph92njHq57vqFmdmJ/1w5xSD8p+ijGuWm46iukqYsRYWsDbtwnwtAOR53Uy7K9FyPeK5tu6aZIyLnHiwjY0CxHiG/ip78jpkiwKlUad01DSsElS4xtc7C0lrjd1ibZA7gfRRip7QqDdK49IpPqFfuDbwm0rDwe35hTFRHQ9MaqNlTGQI33LS6+LJxb7PUHepa5yy1QJXqoa3eVWqgiIgIiICIiAiIgIiICIiDxxVIbfaq0QEREBERAREQFH9f4sWj6kfgB/pe130UgWJpWiE8MkDjhEjHNLgL2uLXsg+aKiBdn7GW20ef9+T8rFF6/s7kaL9+wj+Ag+l1Ouzakiiog2GQyDvJMbiLWfcBwA4ZCx33UTedel9ceszy1fbLDio4uVS3/AJcoXGpILL6A170K+rpe6jLQ5sjXjFcA2Dm2uNntLldfqVVM9vu2je7HkBxNhsU/lme6jONa9R1Ps9FtG0v8BPq9x+qkAbdYGrlB3FLDAXB+CNrcTdjt9xyzWyRUREQEREBERAREQEREBERAREQEREBERAReEIAg9REQFDe0bWw0IgY2MP71z8V3loDWYbi4a45lzd2wHipksDS2haepDRUwslDb4cYva9r2O0XsPRRZ2mXq9uM6W7RJKhhhjh7q+Rf3hebb8Phbh6rofZNDbR7XD78kjvSzMv6FuKPVGgiOKOjhB4mMOPq663LWgCwAA4AWUZzMzwtvd17Q7XHXKKlnZTyMkd+z7xxYG5XJa2+Jw3NdlntChGsGvkVTGYYGvAdk9zwASPdaATt2Endfy6LrLqTSVsgln7wPDQ3Ex+Hwgki4II+8VgaP7MNHREOwSPIN/HKfk3CCouJdd1actmfxiVaMhwQxMOeGNjfRoCyURXZCIiAl0IXjQg9REQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB//9k=" alt="Foto Dr. Ratih Bismiviola" class="doctor-photo">
+                <h2 class="doctor-name">Dr. Ratih Bismiviola</h2>
+                <p class="doctor-specialty">Spesialis Jantung</p>
+                <p class="doctor-bio">
+                    Dr. Ratih adalah ahli kardiologi yang berpengalaman dalam diagnosa dan intervensi jantung seperti 
+                    pemasangan stent dan angioplasti. Beliau menamatkan pendidikan kardiologi di Universitas Indonesia.
+                </p>
+                <div class="doctor-schedule">
+                    <p><strong>Jadwal Praktek:</strong></p>
+                    <ul>
+                        <li>Senin - Rabu: 09:00 - 13:00</li>
+                        <li>Kamis - Sabtu: 14:00 - 18:00</li>
+                    </ul>
+                    `;
+                    break;
+                case 'services':
+                    content.innerHTML = `
+                        <h2>Layanan Kami</h2>
+                        <div>
+                            <h3>Bedah </h3>
+                            <button onclick="toggleServiceDesc(1)">Pelajari Lebih Lanjut</button>
+                            <p id="serviceDesc1" class="service-desc">Layanan bedah plastik komprehensif untuk tujuan estetika dan rekonstruksi.</p>
+                        </div>
+                        <div>
+                            <h3>Kardiologi</h3>
+                            <button onclick="toggleServiceDesc(2)">Pelajari Lebih Lanjut</button>
+                            <p id="serviceDesc2" class="service-desc">Perawatan dan diagnosa penyakit jantung yang lengkap.</p>
+                        </div>
+                        <div>
+                            <h3>Neurologi</h3>
+                            <button onclick="toggleServiceDesc(3)">Pelajari Lebih Lanjut</button>
+                            <p id="serviceDesc3" class="service-desc">Spesialisasi dalam gangguan sistem saraf pusat dan perifer.</p>
+                        </div>
+                    `;
+                    break;
+                case 'departments':
+                    content.innerHTML = `
+                        <h2>Departemen Kami</h2>
+                        <ul>
+                            <li>Departemen Bedah</li>
+                            <li>Departemen Kardiologi</li>
+                            <li>Departemen Neurologi</li>
+                            <li>Departemen Anak</li>
+                        </ul>
+                    `;
+                    content.innerHTML = '';
+            }
+        }
+
+        function showLoginForm() {
+            document.getElementById('loginContainer').style.display = 'flex';
+        }
+
+        function hideLoginForm() {
+            document.getElementById('loginContainer').style.display = 'none';
+        }
+
+        function toggleServiceDesc(id) {
+            const desc = document.getElementById(`serviceDesc${id}`);
+            desc.style.display = desc.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            const user = users.find(u => u.username === username && u.password === password && u.role === role);
+
+            if (user) {
+                alert('Login Berhasil');
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('dashboardContainer').style.display = 'block';
+                document.getElementById('mainContent').style.display = 'none';
+                loadDashboard(user.role);
+            } else {
+                alert('Username atau password salah.');
+            }
+        }
+
+        function logout() {
+            document.getElementById('dashboardContainer').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            alert('Anda telah keluar.');
+        }
+
+        function loadDashboard(role) {
+            const nav = document.getElementById('dashboardNav');
+            const content = document.getElementById('dashboardContent');
+
+            if (role === 'petugas') {
+                nav.innerHTML = `
+                    <a href="#" onclick="showPatientRegistration()">Daftar Pasien</a>
+                    <a href="#" onclick="showPatientList()">Lihat Data Pasien</a>
+                `;
+                content.innerHTML = '<h2>Selamat datang, Petugas!</h2>';
+            } else if (role === 'dokter') {
+                nav.innerHTML = `
+                    <a href="#" onclick="showPatientList()">Lihat Data Pasien</a>
+                    <a href="#" onclick="showExaminationResults()">Unggah Hasil Pemeriksaan</a>
+                `;
+                content.innerHTML = '<h2>Selamat datang, Dokter!</h2>';
+            }
+        }
+
+        function showPatientRegistration() {
+            const content = document.getElementById('dashboardContent');
+            content.innerHTML = `
+                <h2>Pendaftaran Pasien Baru</h2>
+                <form id="patientForm">
+                    <label>Nama Lengkap:</label>
+                    <input type="text" id="patientName" required>
+                    <label>Usia:</label>
+                    <input type="number" id="patientAge" required>
+                    <label>Jenis Kelamin:</label>
+                    <select id="patientGender" required>
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                    <label>Riwayat Penyakit:</label>
+                    <textarea id="patientHistory" required></textarea>
+                    <button type="submit">Daftar</button>
+                </form>
+                <div id="patientList"></div>
+            `;
+
+            document.getElementById('patientForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const patientName = document.getElementById('patientName').value;
+                const patientAge = document.getElementById('patientAge').value;
+                const patientGender = document.getElementById('patientGender').value;
+                const patientHistory = document.getElementById('patientHistory').value;
+
+                const patient = {
+                    name: patientName,
+                    age: patientAge,
+                    gender: patientGender,
+                    history: patientHistory
+                };
+                pasienTerdaftar.push(patient);
+                alert('Pasien berhasil didaftarkan');
+                showPatientList();
+            });
+        }
+
+        function showPatientList() {
+            const content = document.getElementById('dashboardContent');
+            content.innerHTML = '<h2>Data Pasien Terdaftar</h2>';
+            const table = document.createElement('table');
+            table.innerHTML = `
+                <tr>
+                    <th>Nama</th>
+                    <th>Usia</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Riwayat Penyakit</th>
+                    <th>Aksi</th>
+                </tr>
+            `;
+            pasienTerdaftar.forEach((patient, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${patient.name}</td>
+                    <td>${patient.age}</td>
+                    <td>${patient.gender}</td>
+                    <td>${patient.history}</td>
+                    <td><span class="btn-hapus" onclick="deletePatient(${index})">Hapus</span></td>
+                `;
+                table.appendChild(row);
+            });
+            content.appendChild(table);
+        }
+
+        function deletePatient(index) {
+            pasienTerdaftar.splice(index, 1);
+            showPatientList();
+        }
+
+        function showConsultationSchedule() {
+            const content = document.getElementById('dashboardContent');
+            content.innerHTML = `
+                <h2>Jadwal Konsultasi</h2>
+                <table>
+                    <tr>
+                        <th>Nama Pasien</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Aksi</th>
+                    </tr>
+                    ${jadwalKonsultasi.map((schedule, index) => `
+                        <tr>
+                            <td>${schedule.patientName}</td>
+                            <td>${schedule.date}</td>
+                            <td>${schedule.time}</td>
+                            <td><button onclick="deleteConsultation(${index})">Hapus</button></td>
+                        </tr>
+                    `).join('')}
+                </table>
+            `;
+        }
+
+        function showExaminationResults() {
+            const content = document.getElementById('dashboardContent');
+            content.innerHTML = `
+                <h2>Unggah Hasil Pemeriksaan</h2>
+                <form id="resultForm">
+                    <label>Nama Pasien:</label>
+                    <input type="text" id="resultPatientName" required>
+                    <label>Hasil Pemeriksaan:</label>
+                    <textarea id="resultDetails" required></textarea>
+                    <label>Unggah File (Opsional):</label>
+                    <input type="file" id="resultFile">
+                    <button type="submit">Unggah</button>
+                </form>
+            `;
+
+            document.getElementById('resultForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const patientName = document.getElementById('resultPatientName').value;
+                const resultDetails = document.getElementById('resultDetails').value;
+                const resultFile = document.getElementById('resultFile').files[0];
+
+                const result = {
+                    patientName: patientName,
+                    details: resultDetails,
+                    file: resultFile ? resultFile.name : null
+                };
+
+                hasilPemeriksaan.push(result);
+                alert('Hasil pemeriksaan berhasil diunggah');
+            });
+        }
+
+        document.getElementById('loginBtn').addEventListener('click', login);
+    </script>
+</body>
+</html>
